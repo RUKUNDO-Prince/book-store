@@ -1,5 +1,4 @@
 import express from 'express'
-import { Mongoose } from 'mongoose';
 import mongoose from 'mongoose'
 import { PORT, MONGODBURL } from './config.js';
 import { error } from 'console';
@@ -11,14 +10,14 @@ app.get('/', (request, response) => {
     return response.status(234).send("Hello MERN Stack");
 });
 
-app.listen(PORT, () => {
-    console.log(`App is listening to port: ${PORT}`);
-});
-
 mongoose
     .connect(MONGODBURL)
     .then((result) => {
         console.log('App successfully connected to the database');
+        
+        app.listen(PORT, () => {
+            console.log(`App is listening to port: ${PORT}`);
+        });
     }).catch((err) => {
        console.log(error); 
     });
