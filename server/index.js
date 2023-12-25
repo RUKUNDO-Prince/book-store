@@ -1,5 +1,6 @@
 import express from 'express'
 import { Mongoose } from 'mongoose';
+import mongoose from 'mongoose'
 import { PORT, MONGODBURL } from './config.js';
 import { error } from 'console';
 
@@ -14,7 +15,7 @@ app.listen(PORT, () => {
     console.log(`App is listening to port: ${PORT}`);
 });
 
-Mongoose
+mongoose
     .connect(MONGODBURL)
     .then((result) => {
         console.log('App successfully connected to the database');
