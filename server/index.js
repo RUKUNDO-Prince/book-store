@@ -14,7 +14,9 @@ app.get('/', (request, response) => {
 // ROUTE FOR SAVING A NEW BOOK
 app.post('/books', async (request, response) => {
     try {
-        
+        if (!request.body.title || !request.body.author || !request.body.publishYear) {
+            console.log('Hello world');
+        }
     } catch (error) {
         console.log(error.message);
         response.status(500).send({ message: error.message });
