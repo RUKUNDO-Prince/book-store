@@ -90,6 +90,16 @@ app.put('/books/:id', async (request, response) => {
     }
 });
 
+// ROUTE TO DELETE A BOOK
+app.delete('/books/:id', async (request, response) => {
+    try {
+        
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+});
+
 mongoose
     .connect(MONGODBURL)
     .then((result) => {
