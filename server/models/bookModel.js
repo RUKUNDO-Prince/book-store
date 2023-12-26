@@ -1,25 +1,23 @@
-import { timeStamp } from 'console';
-import mongoose from 'mongoose'
-import { type } from 'os';
+import mongoose from 'mongoose';
 
 const bookSchema = mongoose.Schema(
-    {
-        title: {
-            type: String,
-            required: true,
-        },
-        author: {
-            type: String,
-            required: true,
-        },
-        publishYear: {
-            type: Number,
-            required: true,
-        }
+  {
+    title: {
+      type: String,
+      required: true,
     },
-    {
-        timestamps: true,
-    }
+    author: {
+      type: String,
+      required: true,
+    },
+    publishYear: {
+      type: Number,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
 );
 
-export const Book = mongoose.model('Cat', {name: String});
+export const Book = mongoose.model('Book', bookSchema);
