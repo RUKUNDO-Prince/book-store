@@ -37,6 +37,15 @@ app.post('/books', async (request, response) => {
     }
 })
 
+// ROUTE TO GET ALL THE BOOKS FROM DB
+app.get('/books', async (request, response) => {
+    try {
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
 mongoose
     .connect(MONGODBURL)
     .then((result) => {
