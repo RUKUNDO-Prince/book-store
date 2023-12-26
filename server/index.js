@@ -12,8 +12,13 @@ app.get('/', (request, response) => {
 });
 
 // ROUTE FOR SAVING A NEW BOOK
-app.post('/books', (request, response) => {
-    
+app.post('/books', async (request, response) => {
+    try {
+        
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
 })
 
 mongoose
