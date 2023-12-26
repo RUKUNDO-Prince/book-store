@@ -66,6 +66,16 @@ app.get('/books/:id', async (request, response) => {
     }
 })
 
+// ROUTE TO UPDATE A BOOK
+app.put('/books/:id', async (request, response) => {
+    try {
+        
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+});
+
 mongoose
     .connect(MONGODBURL)
     .then((result) => {
