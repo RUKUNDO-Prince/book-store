@@ -12,7 +12,9 @@ const app = express();
 app.use(express.json());
 
 // MIDDLEWARE FOR HANDLING CORS POLICY
+// METHOD 1
 app.use(cors());
+// METHOD 2
 
 app.get('/', (request, response) => {
     console.log(request);
