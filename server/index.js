@@ -4,11 +4,15 @@ import { PORT, MONGODBURL } from './config.js';
 import { error } from 'console';
 import { Book } from './models/bookModel.js';
 import bookRoute from './routes/booksRoutes.js'
+import cors from cors
 
 const app = express();
 
-// MIDDLEWARES FOR PARSING THE REQUEST BODY
+// MIDDLEWARE FOR PARSING THE REQUEST BODY
 app.use(express.json());
+
+// MIDDLEWARE FOR HANDLING CORS POLICY
+app.use(cors());
 
 app.get('/', (request, response) => {
     console.log(request);
