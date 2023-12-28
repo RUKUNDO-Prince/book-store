@@ -4,7 +4,7 @@ import { PORT, MONGODBURL } from './config.js';
 import { error } from 'console';
 import { Book } from './models/bookModel.js';
 import bookRoute from './routes/booksRoutes.js'
-import cors from cors
+import cors from 'cors';
 
 const app = express();
 
