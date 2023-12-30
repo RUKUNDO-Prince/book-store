@@ -17,6 +17,17 @@ const CreateBooks = () => {
       publishYear,
     };
     setLoading(true);
+    axios
+      .post('http://localhost:5555/books', data)
+      .then(() => {
+        setLoading(false);
+        navigate('/');
+      })
+      .catch((error) => {
+        setLoading(false)
+        alert('An error happened. Please try again later!')
+        console.log(error);
+      })
   };
 
   return (
