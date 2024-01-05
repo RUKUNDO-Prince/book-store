@@ -21,7 +21,8 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post('http://localhost:5555/books', data)
+      // .post('http://localhost:5555/books', data)
+      .post('https://book-store-yu6m.onrender.com/books', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Created successfully', { variant: 'success' });
@@ -29,7 +30,7 @@ const CreateBooks = () => {
       })
       .catch((error) => {
         setLoading(false);
-        // alert('An error happened. Please Chack console');
+        // alert('An error happened. Please try again later');
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });

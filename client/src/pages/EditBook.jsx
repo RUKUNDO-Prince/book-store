@@ -16,7 +16,8 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    // axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`https://book-store-yu6m.onrender.com/books/${id}`)
     .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear)
@@ -24,7 +25,7 @@ const EditBook = () => {
         setLoading(false);
       }).catch((error) => {
         setLoading(false);
-        alert('An error happened. Please Chack console');
+        alert('An error happened. Please try again later');
         console.log(error);
       });
   }, [])
@@ -37,7 +38,8 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      // .put(`http://localhost:5555/books/${id}`, data)
+      .put(`https://book-store-yu6m.onrender.com/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });
@@ -45,7 +47,7 @@ const EditBook = () => {
       })
       .catch((error) => {
         setLoading(false);
-        // alert('An error happened. Please Chack console');
+        // alert('An error happened. Please try again later');
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });

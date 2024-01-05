@@ -14,7 +14,8 @@ const DeleteBook = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5555/books/${id}`)
+      // .delete(`http://localhost:5555/books/${id}`)
+      .delete(`https://book-store-yu6m.onrender.com/books/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Deleted successfully', { variant: 'success' });
@@ -22,7 +23,7 @@ const DeleteBook = () => {
       })
       .catch((error) => {
         setLoading(false);
-        // alert('An error happened. Please Chack console');
+        // alert('An error happened. Please try again later');
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });
