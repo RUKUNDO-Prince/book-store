@@ -22,7 +22,7 @@ const DeleteBook = () => {
       })
       .catch((error) => {
         setLoading(false);
-        // alert('An error happened. Please try again later');
+        // alert('An error happened. Please Chack console');
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });
